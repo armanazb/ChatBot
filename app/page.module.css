@@ -1,15 +1,15 @@
 .message-content {
-  background-color: #e0f7fa; /* Light teal background */
+  background-color: #a8e6cf; /* Mint green background */
   border-radius: 10px;
   padding: 20px;
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #004d40; /* Darker green for text */
   line-height: 1.5;
 }
 
 .message-content h3, .message-content h4 {
   margin-bottom: 10px;
-  color: #005f73;
+  color: #00796b; /* Dark mint green */
 }
 
 .message-content ul {
