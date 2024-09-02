@@ -7,7 +7,26 @@ export default function Home() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Hi! I'm your medical assistant specialized in medication interactions. How can I assist you today?",
+      content: `
+        <div class="message-content">
+          <p>Thank you for providing the medications.</p>
+          <h3>Potential Interactions Between Olanzapine and Alcohol:</h3>
+          <ol>
+            <li>
+              <strong>Increased CNS Depression:</strong> Both olanzapine and alcohol can depress the central nervous system (CNS). When combined, their sedative effects can be additive, leading to enhanced drowsiness, dizziness, and difficulty concentrating. In severe cases, this combination can impair motor coordination and judgment, which can be dangerous.
+            </li>
+            <li>
+              <strong>Enhanced Side Effects:</strong> Alcohol can exacerbate the common side effects of olanzapine, such as:
+              <ul>
+                <li>Drowsiness</li>
+                <li>Dizziness</li>
+                <li>Orthostatic hypotension (a form of low blood pressure that happens when you stand up from sitting or lying down)</li>
+                <li>Increased risk of seizures (particularly if you have an underlying seizure disorder)</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      `,
     },
   ]);
   const [message, setMessage] = useState('');
@@ -107,8 +126,9 @@ export default function Home() {
                 color="white"
                 borderRadius={16}
                 p={3}
+                className="message-content"
+                dangerouslySetInnerHTML={{ __html: message.content }}
               >
-                {message.content}
               </Box>
             </Box>
           ))}
