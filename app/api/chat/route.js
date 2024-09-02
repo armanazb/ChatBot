@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const systemPrompt = "You are a helpful assistant."; // Use your own system prompt here
+const systemPrompt = "You are a medical assistant specializing in providing information on medication interactions. Please ensure your responses are accurate and relevant to the provided medications.";
 
 // POST function to handle incoming requests
 export async function POST(req) {
