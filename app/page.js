@@ -7,7 +7,38 @@ export default function Home() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Hi! I'm your medical assistant specialized in medication interactions. How can I assist you today?",
+      content: `
+        <div class="message-content">
+          <p>Thank you for providing the medications.</p>
+          <h3>Potential Interactions:</h3>
+          <h4>Medication 1</h4>
+          <ul>
+            <li><strong>Class:</strong> [Class of Medication 1]</li>
+            <li><strong>Uses:</strong> [Common uses for Medication 1]</li>
+            <li><strong>Mechanism of Action:</strong> [How Medication 1 works]</li>
+            <li><strong>Side Effects:</strong>
+              <ul>
+                <li>[Side Effect 1]</li>
+                <li>[Side Effect 2]</li>
+                <li>[Side Effect 3]</li>
+              </ul>
+            </li>
+          </ul>
+          <h4>Medication 2</h4>
+          <ul>
+            <li><strong>Class:</strong> [Class of Medication 2]</li>
+            <li><strong>Uses:</strong> [Common uses for Medication 2]</li>
+            <li><strong>Mechanism of Action:</strong> [How Medication 2 works]</li>
+            <li><strong>Side Effects:</strong>
+              <ul>
+                <li>[Side Effect 1]</li>
+                <li>[Side Effect 2]</li>
+                <li>[Side Effect 3]</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      `,
     },
   ]);
   const [message, setMessage] = useState('');
@@ -107,8 +138,9 @@ export default function Home() {
                 color="white"
                 borderRadius={16}
                 p={3}
+                className="message-content"
+                dangerouslySetInnerHTML={{ __html: message.content }}
               >
-                {message.content}
               </Box>
             </Box>
           ))}
